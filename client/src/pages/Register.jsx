@@ -31,7 +31,7 @@ export default function Register() {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:5000/api/users/register', {
+      const response = await axios.post('http://13.233.122.61:5000/api/users/register', {
         name: formData.name,
         email: formData.email,
         password: formData.password

@@ -15,7 +15,7 @@ function Dashboard() {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('chaloPassToken');
-        const response = await axios.get('http://localhost:5000/api/users/me', {
+        const response = await axios.get('http://13.233.122.61:5000/api/users/me', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -41,7 +41,7 @@ function Dashboard() {
       setLoading(true);
       const token = localStorage.getItem('chaloPassToken');
       const response = await axios.post(
-        'http://localhost:5000/api/wallet/topup',
+        'http://13.233.122.61:5000/api/wallet/topup',
         { amount: parseFloat(amount) },
         {
           headers: {

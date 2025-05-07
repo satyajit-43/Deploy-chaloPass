@@ -62,7 +62,7 @@ export default function ScanTicket() {
       setScanResult(result.data);
       setLoading(true);
 
-      const response = await axios.post('http://localhost:5000/api/qr/validate', {
+      const response = await axios.post('http://13.233.122.61:5000/api/qr/validate', {
         qrData: result.data,
         source: state.source,
         destination: state.destination
