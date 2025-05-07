@@ -62,7 +62,7 @@ app.use(cors({ origin: '*', credentials: true }));
 
 // Serve frontend
 const _dirname = path.resolve();
-const buildpath = path.join(_dirname, 'client', 'dist');
+const buildpath = path.join(__dirname, '..', 'client', 'dist');
 app.use(express.static(buildpath));
 
 // Routes
@@ -72,9 +72,9 @@ app.use('/api/users', require('./routes/authRoutes'));
 app.use('/api/qr', require('./routes/qrRoutes'));
 
 // Catch-all to support React Router
-app.get('*', (req, res) => {
-  res.sendFile(path.join(buildpath, 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(buildpath, 'index.html'));
+// });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(buildpath));
